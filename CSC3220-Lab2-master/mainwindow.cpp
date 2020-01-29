@@ -20,7 +20,7 @@ const QStringList CREDIT_CARD_MASKS = {
 
 };
 
-
+//settin up mask constructors
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -85,6 +85,7 @@ void MainWindow::on_parkingCheckBox_stateChanged(int arg1)
     this->calculatePreviewPrice();
 }
 
+//page 1
 void MainWindow::on_nextPushButton_clicked()
 {
     QLocale* locale = new QLocale("en_US");
@@ -197,7 +198,7 @@ void MainWindow::on_backPushButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 
 }
-
+//setting mask
 void MainWindow::on_visaRadio_toggled(bool checked)
 {
     if (!checked)
@@ -234,7 +235,7 @@ void MainWindow::on_americaexpressRadio_toggled(bool checked)
     ui->creditCardLineEdit->clear();
 
 }
-
+//box message, confirming payment
 void MainWindow::on_payPushButton_clicked()
 {
     QMessageBox msgBox;
@@ -262,7 +263,7 @@ void MainWindow::on_payPushButton_clicked()
 
 }
 
-
+//page 3
 void MainWindow::on_confirmPushButton_clicked()
 {
     QMessageBox thankYou;
@@ -271,4 +272,4 @@ void MainWindow::on_confirmPushButton_clicked()
     QApplication::quit();
   }
 
-
+//fin
